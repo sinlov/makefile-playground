@@ -10,7 +10,7 @@ pathDistEnv:
 	@echo "PATH_INFO_ROOT_DIST_LOCAL                  ${PATH_INFO_ROOT_DIST_LOCAL}"
 	@echo "PATH_INFO_ROOT_DIST_OS                     ${PATH_INFO_ROOT_DIST_OS}"
 
-cleanRootDist:
+cleanDistAll:
 	-@RM -r ${PATH_INFO_ROOT_DIST}
 
 pathCheckRootDist: | $(PATH_INFO_ROOT_DIST)
