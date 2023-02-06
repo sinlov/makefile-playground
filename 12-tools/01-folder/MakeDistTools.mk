@@ -1,53 +1,53 @@
 # this file must use as base Makefile
 
-PATH_INFO_ROOT_DIST=dist
-PATH_INFO_ROOT_DIST_LOCAL=${PATH_INFO_ROOT_DIST}/local
-PATH_INFO_ROOT_DIST_OS=${PATH_INFO_ROOT_DIST}/os
+ENV_PATH_INFO_ROOT_DIST=dist
+ENV_PATH_INFO_ROOT_DIST_LOCAL=${ENV_PATH_INFO_ROOT_DIST}/local
+ENV_PATH_INFO_ROOT_DIST_OS=${ENV_PATH_INFO_ROOT_DIST}/os
 
 pathDistEnv:
 	@echo "-----------------  this pathDistEnv has -----------------"
-	@echo "PATH_INFO_ROOT_DIST                        ${PATH_INFO_ROOT_DIST}"
-	@echo "PATH_INFO_ROOT_DIST_LOCAL                  ${PATH_INFO_ROOT_DIST_LOCAL}"
-	@echo "PATH_INFO_ROOT_DIST_OS                     ${PATH_INFO_ROOT_DIST_OS}"
+	@echo "ENV_PATH_INFO_ROOT_DIST                        ${PATH_INFO_ROOT_DIST}"
+	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                  ${ENV_PATH_INFO_ROOT_DIST_LOCAL}"
+	@echo "ENV_PATH_INFO_ROOT_DIST_OS                     ${ENV_PATH_INFO_ROOT_DIST_OS}"
 
 cleanDistAll:
-	-@RM -r ${PATH_INFO_ROOT_DIST}
+	-@RM -r ${ENV_PATH_INFO_ROOT_DIST}
 
-pathCheckRootDist: | $(PATH_INFO_ROOT_DIST)
-	@echo "-> dist folder tools path exist at: ${PATH_INFO_ROOT_DIST}"
+pathCheckRootDist: | $(ENV_PATH_INFO_ROOT_DIST)
+	@echo "-> dist folder tools path exist at: ${ENV_PATH_INFO_ROOT_DIST}"
 
-$(PATH_INFO_ROOT_DIST):
-	@echo "-> dist folder tools does not exist, try mkdir at: ${PATH_INFO_ROOT_DIST}"
+$(ENV_PATH_INFO_ROOT_DIST):
+	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_INFO_ROOT_DIST}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${PATH_INFO_ROOT_DIST})
+	-@mkdir $(subst /,\,${ENV_PATH_INFO_ROOT_DIST})
 else
-	-@mkdir -p ${PATH_INFO_ROOT_DIST}
+	-@mkdir -p ${ENV_PATH_INFO_ROOT_DIST}
 endif
 
 cleanRootDistLocal:
-	-@RM -r ${PATH_INFO_ROOT_DIST_LOCAL}
+	-@RM -r ${ENV_PATH_INFO_ROOT_DIST_LOCAL}
 
-pathCheckRootDistLocal: | $(PATH_INFO_ROOT_DIST_LOCAL)
-	@echo "-> dist folder tools path exist at: ${PATH_INFO_ROOT_DIST_LOCAL}"
+pathCheckRootDistLocal: | $(ENV_PATH_INFO_ROOT_DIST_LOCAL)
+	@echo "-> dist folder tools path exist at: ${ENV_PATH_INFO_ROOT_DIST_LOCAL}"
 
-$(PATH_INFO_ROOT_DIST_LOCAL):
-	@echo "-> dist folder tools does not exist, try mkdir at: ${PATH_INFO_ROOT_DIST_LOCAL}"
+$(ENV_PATH_INFO_ROOT_DIST_LOCAL):
+	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_INFO_ROOT_DIST_LOCAL}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${PATH_INFO_ROOT_DIST_LOCAL})
+	-@mkdir $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL})
 else
-	-@mkdir -p ${PATH_INFO_ROOT_DIST_LOCAL}
+	-@mkdir -p ${ENV_PATH_INFO_ROOT_DIST_LOCAL}
 endif
 
 cleanRootDistOs:
-	-@RM -r ${PATH_INFO_ROOT_DIST_OS}
+	-@RM -r ${ENV_PATH_INFO_ROOT_DIST_OS}
 
-pathCheckRootDistOs: | $(PATH_INFO_ROOT_DIST_OS)
-	@echo "-> dist folder tools path exist at: ${PATH_INFO_ROOT_DIST_OS}"
+pathCheckRootDistOs: | $(ENV_PATH_INFO_ROOT_DIST_OS)
+	@echo "-> dist folder tools path exist at: ${ENV_PATH_INFO_ROOT_DIST_OS}"
 
-$(PATH_INFO_ROOT_DIST_OS):
-	@echo "-> dist folder tools does not exist, try mkdir at: ${PATH_INFO_ROOT_DIST_OS}"
+$(ENV_PATH_INFO_ROOT_DIST_OS):
+	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_INFO_ROOT_DIST_OS}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${PATH_INFO_ROOT_DIST_OS})
+	-@mkdir $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS})
 else
-	-@mkdir -p ${PATH_INFO_ROOT_DIST_OS}
+	-@mkdir -p ${ENV_PATH_INFO_ROOT_DIST_OS}
 endif
