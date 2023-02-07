@@ -1,4 +1,8 @@
-# this file must use into MakeDistTools.mk
+# this file must use same folder at MakeDistTools.mk
+# need var ENV_PATH_INFO_ROOT_DIST ENV_PATH_INFO_ROOT_DIST_LOCAL ENV_PATH_INFO_ROOT_DIST_OS on so on
+# use at Makefile
+# include MakefileUtils/MakeDistTools.mk
+# include MakefileUtils/MakeDistToolsExtra.mk
 
 pathDistExtraEnv:
 	@echo "-----------------  this pathDistExtraEnv has start -----------------"

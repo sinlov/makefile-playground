@@ -1,4 +1,6 @@
 # this file must use as base Makefile
+# use at Makefile
+# include MakefileUtils/MakeDistTools.mk
 
 ENV_PATH_INFO_ROOT_DIST=dist
 ENV_PATH_INFO_ROOT_DIST_LOCAL=${ENV_PATH_INFO_ROOT_DIST}/local
