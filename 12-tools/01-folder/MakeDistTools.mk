@@ -3,17 +3,45 @@
 ENV_PATH_INFO_ROOT_DIST=dist
 ENV_PATH_INFO_ROOT_DIST_LOCAL=${ENV_PATH_INFO_ROOT_DIST}/local
 ENV_PATH_INFO_ROOT_DIST_OS=${ENV_PATH_INFO_ROOT_DIST}/os
+ENV_INFO_PLATFORM_OS_ARCH_AMD64=amd64
+ENV_INFO_PLATFORM_OS_ARCH_386=386
+ENV_INFO_PLATFORM_OS_ARCH_ARM64=arm64
+ENV_INFO_PLATFORM_OS_ARCH_ARM=arm
 
 pathDistEnv:
-	@echo "-----------------  this pathDistEnv has -----------------"
+	@echo "-----------------  this pathDistEnv has start -----------------"
 	@echo "ENV_PATH_INFO_ROOT_DIST                        ${PATH_INFO_ROOT_DIST}"
 ifeq ($(OS),Windows_NT)
-	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                  $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL})"
-	@echo "ENV_PATH_INFO_ROOT_DIST_OS                     $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS})"
+	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                          $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL})"
+	@echo "ENV_PATH_INFO_ROOT_DIST_OS                             $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS})"
 else
-	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                  ${ENV_PATH_INFO_ROOT_DIST_LOCAL}"
-	@echo "ENV_PATH_INFO_ROOT_DIST_OS                     ${ENV_PATH_INFO_ROOT_DIST_OS}"
+	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                          ${ENV_PATH_INFO_ROOT_DIST_LOCAL}"
+	@echo "ENV_PATH_INFO_ROOT_DIST_OS                             ${ENV_PATH_INFO_ROOT_DIST_OS}"
+	@echo ""
+	@echo "-----------------"
+	@echo "ENV_INFO_PLATFORM_OS_WINDOWS                           ${ENV_INFO_PLATFORM_OS_WINDOWS}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformWinAmd64 cleanRootRootDistPlatformWinAmd64"
+	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_AMD64                ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_AMD64}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformWin386 cleanRootRootDistPlatformWin386"
+	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_386                  ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_386}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformWinArm64 cleanRootRootDistPlatformArm64"
+	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM64                ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM64}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformWinArm cleanRootRootDistPlatformArm"
+	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM                  ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM}"
+	@echo "-----------------"
+	@echo ""
 endif
+
+	@echo ""
+	@echo "ENV_INFO_PLATFORM_OS_ARCH_AMD64                        ${ENV_INFO_PLATFORM_OS_ARCH_AMD64}"
+	@echo "ENV_INFO_PLATFORM_OS_ARCH_386                          ${ENV_INFO_PLATFORM_OS_ARCH_386}"
+	@echo "ENV_INFO_PLATFORM_OS_ARCH_ARM64                        ${ENV_INFO_PLATFORM_OS_ARCH_ARM64}"
+	@echo "ENV_INFO_PLATFORM_OS_ARCH_ARM                          ${ENV_INFO_PLATFORM_OS_ARCH_ARM}"
+	@echo "-----------------  this pathDistEnv has end -----------------"
 
 cleanDistAll:
 	-@RM -r ${ENV_PATH_INFO_ROOT_DIST}
@@ -56,11 +84,6 @@ ifeq ($(OS),Windows_NT)
 else
 	-@mkdir -p ${ENV_PATH_INFO_ROOT_DIST_OS}
 endif
-
-ENV_INFO_PLATFORM_OS_ARCH_AMD64=amd64
-ENV_INFO_PLATFORM_OS_ARCH_386=386
-ENV_INFO_PLATFORM_OS_ARCH_ARM64=arm64
-ENV_INFO_PLATFORM_OS_ARCH_ARM=arm
 
 ENV_INFO_PLATFORM_OS_WINDOWS=windows
 
