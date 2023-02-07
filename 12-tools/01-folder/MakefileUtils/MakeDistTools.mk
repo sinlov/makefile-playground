@@ -9,6 +9,14 @@ ENV_INFO_PLATFORM_OS_ARCH_AMD64=amd64
 ENV_INFO_PLATFORM_OS_ARCH_386=386
 ENV_INFO_PLATFORM_OS_ARCH_ARM64=arm64
 ENV_INFO_PLATFORM_OS_ARCH_ARM=arm
+ENV_INFO_PLATFORM_OS_ARCH_MIPS=mips
+ENV_INFO_PLATFORM_OS_ARCH_MIPS64=mips64
+ENV_INFO_PLATFORM_OS_ARCH_MIPS66LE=mips64le
+ENV_INFO_PLATFORM_OS_ARCH_RISCV64=riscv64
+ENV_INFO_PLATFORM_OS_ARCH_S390X=s390x
+ENV_INFO_PLATFORM_OS_ARCH_PPC64=ppc64
+ENV_INFO_PLATFORM_OS_ARCH_PPC64LE=ppc64le
+ENV_INFO_PLATFORM_OS_ARCH_LOONG64=loong64
 
 pathDistEnv:
 	@echo "-----------------  this pathDistEnv has start -----------------"
@@ -74,6 +82,10 @@ else
 	@echo ""
 	@echo "pathCheckRootDistPlatformWinArm cleanRootDistPlatformWinArm"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM                  ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformWinAll     to check windows"
+	@echo "-----------------"
+	@echo ""
 	@echo "-----------------"
 	@echo "ENV_INFO_PLATFORM_OS_MACOS                             ${ENV_INFO_PLATFORM_OS_MACOS}"
 	@echo ""
@@ -82,6 +94,10 @@ else
 	@echo ""
 	@echo "pathCheckRootDistPlatformMacOsArm64 cleanRootDistPlatformMacOsArm64"
 	@echo "ENV_INFO_PLATFORM_OS_MACOS_ARM64                       ${ENV_INFO_PLATFORM_OS_MACOS_ARM64}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformMacOsAll   to check all macOS"
+	@echo ""
+	@echo "-----------------"
 	@echo ""
 	@echo "-----------------"
 	@echo "ENV_INFO_PLATFORM_OS_LINUX                             ${ENV_INFO_PLATFORM_OS_LINUX}"
@@ -97,6 +113,8 @@ else
 	@echo ""
 	@echo "pathCheckRootDistPlatformLinuxArm cleanRootDistPlatformLinuxArm"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM                    ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformLinuxCommon to check linux common use"
 	@echo "-----------------"
 	@echo ""
 endif
@@ -419,4 +437,4 @@ else
 	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM}
 endif
 
-pathCheckRootDistPlatformLinuxAll: pathCheckRootDistPlatformLinuxAmd64 pathCheckRootDistPlatformLinux386 pathCheckRootDistPlatformLinuxArm64 pathCheckRootDistPlatformLinuxArm
+pathCheckRootDistPlatformLinuxCommon: pathCheckRootDistPlatformLinuxAmd64 pathCheckRootDistPlatformLinux386 pathCheckRootDistPlatformLinuxArm64 pathCheckRootDistPlatformLinuxArm

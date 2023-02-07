@@ -5,7 +5,7 @@
 # include MakefileUtils/MakeDistToolsExtraFreebsd.mk
 
 pathDistExtraFreebsdEnv:
-	@echo "-----------------  this pathDistExtraEnv has start -----------------"
+	@echo "-----------------  this pathDistExtraFreebsdEnv has start -----------------"
 	@echo "ENV_PATH_INFO_ROOT_DIST                                ${ENV_PATH_INFO_ROOT_DIST}"
 ifeq ($(OS),Windows_NT)
 	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                          $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL})"
@@ -50,7 +50,7 @@ else
 	@echo "-----------------"
 	@echo ""
 endif
-	@echo "-----------------  this pathDistExtraEnv has end -----------------"
+	@echo "-----------------  this pathDistExtraFreebsdEnv has end -----------------"
 
 ENV_INFO_PLATFORM_OS_FREEBSD=freebsd
 
