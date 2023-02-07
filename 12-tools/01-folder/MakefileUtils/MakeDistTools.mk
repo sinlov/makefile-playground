@@ -73,6 +73,12 @@ ifeq ($(OS),Windows_NT)
 	@echo "pathCheckRootDistPlatformLinuxCommon to check linux common use"
 	@echo "-----------------"
 	@echo ""
+	@echo "pathCheckRootDistLocalTest cleanRootDistLocalTest"
+	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST                     $(subts /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST})"
+	@echo ""
+	@echo "pathCheckRootDistLocalRelease cleanRootDistLocalRelease"
+	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE                  $(subts /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE})"
+	@echo ""
 else
 	@echo "ENV_PATH_INFO_ROOT_DIST                                ${ENV_PATH_INFO_ROOT_DIST}"
 	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                          ${ENV_PATH_INFO_ROOT_DIST_LOCAL}"
@@ -127,6 +133,12 @@ else
 	@echo "pathCheckRootDistPlatformLinuxCommon to check linux common use"
 	@echo "-----------------"
 	@echo ""
+	@echo "pathCheckRootDistLocalTest cleanRootDistLocalTest"
+	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST                     ${ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST}"
+	@echo ""
+	@echo "pathCheckRootDistLocalRelease cleanRootDistLocalRelease"
+	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE                  ${ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE}"
+	@echo ""
 endif
 
 	@echo ""
@@ -170,6 +182,46 @@ ifeq ($(OS),Windows_NT)
 	-@mkdir $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL})
 else
 	-@mkdir -p ${ENV_PATH_INFO_ROOT_DIST_LOCAL}
+endif
+
+ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST=${ENV_PATH_INFO_ROOT_DIST_LOCAL}/test
+
+pathCheckRootDistLocalTest: | $(ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST)
+	@echo "-> dist folder tools path exist at: ${ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST}"
+
+$(ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST):
+	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST}"
+ifeq ($(OS),Windows_NT)
+	-@mkdir $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST})
+else
+	-@mkdir -p ${ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST}
+endif
+
+cleanRootDistLocalTest:
+ifeq ($(OS),Windows_NT)
+	-@RM -r $(subst /,\,${${ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST})
+else
+	-@RM -r ${ENV_PATH_INFO_ROOT_DIST_LOCAL_TEST}
+endif
+
+ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE=${ENV_PATH_INFO_ROOT_DIST_LOCAL}/release
+
+pathCheckRootDistLocalRelease: | $(ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE)
+	@echo "-> dist folder tools path exist at: ${ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE}"
+
+$(ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE):
+	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE}"
+ifeq ($(OS),Windows_NT)
+	-@mkdir $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE})
+else
+	-@mkdir -p ${ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE}
+endif
+
+cleanRootDistLocalRelease:
+ifeq ($(OS),Windows_NT)
+	-@RM -r $(subst /,\,${${ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE})
+else
+	-@RM -r ${ENV_PATH_INFO_ROOT_DIST_LOCAL_RELEASE}
 endif
 
 cleanRootDistOs:
