@@ -21,32 +21,32 @@ else
 	@echo "-----------------"
 	@echo "ENV_INFO_PLATFORM_OS_WINDOWS                           ${ENV_INFO_PLATFORM_OS_WINDOWS}"
 	@echo ""
-	@echo "pathCheckRootDistPlatformWinAmd64 cleanRootRootDistPlatformWinAmd64"
+	@echo "pathCheckRootDistPlatformWinAmd64 cleanRootDistPlatformWinAmd64"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_AMD64                ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_AMD64}"
 	@echo ""
-	@echo "pathCheckRootDistPlatformWin386 cleanRootRootDistPlatformWin386"
+	@echo "pathCheckRootDistPlatformWin386 cleanRootDistPlatformWin386"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_386                  ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_386}"
 	@echo ""
-	@echo "pathCheckRootDistPlatformWinArm64 cleanRootRootDistPlatformArm64"
+	@echo "pathCheckRootDistPlatformWinArm64 cleanRootDistPlatformArm64"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM64                ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM64}"
 	@echo ""
-	@echo "pathCheckRootDistPlatformWinArm cleanRootRootDistPlatformArm"
+	@echo "pathCheckRootDistPlatformWinArm cleanRootDistPlatformArm"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM                  ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM}"
 	@echo "-----------------"
 	@echo ""
 	@echo "-----------------"
 	@echo "ENV_INFO_PLATFORM_OS_LINUX                             ${ENV_INFO_PLATFORM_OS_LINUX}"
 	@echo ""
-	@echo "pathCheckRootDistPlatformLinuxAmd64 cleanRootRootDistPlatformLinuxAmd64"
+	@echo "pathCheckRootDistPlatformLinuxAmd64 cleanRootDistPlatformLinuxAmd64"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_LINUX_AMD64                  ${ENV_PATH_DIST_PLATFORM_OS_LINUX_AMD64}"
 	@echo ""
-	@echo "pathCheckRootDistPlatformLinux386 cleanRootRootDistPlatformLinuxAmd386"
+	@echo "pathCheckRootDistPlatformLinux386 cleanRootDistPlatformLinuxAmd386"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_LINUX_386                    ${ENV_PATH_DIST_PLATFORM_OS_LINUX_386}"
 	@echo ""
-	@echo "pathCheckRootDistPlatformLinuxArm64 cleanRootRootDistPlatformLinuxArm64"
+	@echo "pathCheckRootDistPlatformLinuxArm64 cleanRootDistPlatformLinuxArm64"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64                  ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64}"
 	@echo ""
-	@echo "pathCheckRootDistPlatformLinuxArm cleanRootRootDistPlatformLinuxArm"
+	@echo "pathCheckRootDistPlatformLinuxArm cleanRootDistPlatformLinuxArm"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM                    ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM}"
 	@echo "-----------------"
 	@echo ""
@@ -136,7 +136,7 @@ else
 	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_AMD64}
 endif
 
-cleanRootRootDistPlatformWinAmd64:
+cleanRootDistPlatformWinAmd64:
 ifeq ($(OS),Windows_NT)
 	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_AMD64})
 else
@@ -156,7 +156,7 @@ else
 	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_386}
 endif
 
-cleanRootRootDistPlatformWin386:
+cleanRootDistPlatformWin386:
 ifeq ($(OS),Windows_NT)
 	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_386})
 else
@@ -240,7 +240,7 @@ else
 	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_AMD64}
 endif
 
-cleanRootRootDistPlatformLinuxAmd64:
+cleanRootDistPlatformLinuxAmd64:
 ifeq ($(OS),Windows_NT)
 	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_AMD64})
 else
@@ -260,7 +260,7 @@ else
 	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_386}
 endif
 
-cleanRootRootDistPlatformLinuxAmd386:
+cleanRootDistPlatformLinuxAmd386:
 ifeq ($(OS),Windows_NT)
 	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_386})
 else
@@ -280,7 +280,7 @@ else
 	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64}
 endif
 
-cleanRootRootDistPlatformLinuxArm64:
+cleanRootDistPlatformLinuxArm64:
 ifeq ($(OS),Windows_NT)
 	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64})
 else
@@ -300,7 +300,7 @@ else
 	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM}
 endif
 
-cleanRootRootDistPlatformLinuxArm:
+cleanRootDistPlatformLinuxArm:
 ifeq ($(OS),Windows_NT)
 	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM})
 else
