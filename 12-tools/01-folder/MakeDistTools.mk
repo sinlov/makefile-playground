@@ -34,6 +34,22 @@ else
 	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM                  ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM}"
 	@echo "-----------------"
 	@echo ""
+	@echo "-----------------"
+	@echo "ENV_INFO_PLATFORM_OS_LINUX                             ${ENV_INFO_PLATFORM_OS_LINUX}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformLinuxAmd64 cleanRootRootDistPlatformLinuxAmd64"
+	@echo "ENV_PATH_DIST_PLATFORM_OS_LINUX_AMD64                  ${ENV_PATH_DIST_PLATFORM_OS_LINUX_AMD64}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformLinux386 cleanRootRootDistPlatformLinuxAmd386"
+	@echo "ENV_PATH_DIST_PLATFORM_OS_LINUX_386                    ${ENV_PATH_DIST_PLATFORM_OS_LINUX_386}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformLinuxArm64 cleanRootRootDistPlatformLinuxArm64"
+	@echo "ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64                  ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformLinuxArm cleanRootRootDistPlatformLinuxArm"
+	@echo "ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM                    ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM}"
+	@echo "-----------------"
+	@echo ""
 endif
 
 	@echo ""
@@ -230,3 +246,65 @@ ifeq ($(OS),Windows_NT)
 else
 	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_AMD64}
 endif
+
+ENV_PATH_DIST_PLATFORM_OS_LINUX_386=${ENV_PATH_DIST_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_386}
+
+pathCheckRootDistPlatformLinux386: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_386)
+	@echo "-> dist folder tools path exist at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_386}"
+
+$(ENV_PATH_DIST_PLATFORM_OS_LINUX_386):
+	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_386}"
+ifeq ($(OS),Windows_NT)
+	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_386})
+else
+	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_386}
+endif
+
+cleanRootRootDistPlatformLinuxAmd386:
+ifeq ($(OS),Windows_NT)
+	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_386})
+else
+	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_386}
+endif
+
+ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64=${ENV_PATH_DIST_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64}
+
+pathCheckRootDistPlatformLinuxArm64: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64)
+	@echo "-> dist folder tools path exist at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64}"
+
+$(ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64):
+	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64}"
+ifeq ($(OS),Windows_NT)
+	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64})
+else
+	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64}
+endif
+
+cleanRootRootDistPlatformLinuxArm64:
+ifeq ($(OS),Windows_NT)
+	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64})
+else
+	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM64}
+endif
+
+ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM=${ENV_PATH_DIST_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_ARM}
+
+pathCheckRootDistPlatformLinuxArm: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM)
+	@echo "-> dist folder tools path exist at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM}"
+
+$(ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM):
+	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM}"
+ifeq ($(OS),Windows_NT)
+	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM})
+else
+	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM}
+endif
+
+cleanRootRootDistPlatformLinuxArm:
+ifeq ($(OS),Windows_NT)
+	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM})
+else
+	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_ARM}
+endif
+
+pathCheckRootDistPlatformLinuxAll: pathCheckRootDistPlatformLinuxAmd64 pathCheckRootDistPlatformLinux386 pathCheckRootDistPlatformLinuxArm64 pathCheckRootDistPlatformLinuxArm
