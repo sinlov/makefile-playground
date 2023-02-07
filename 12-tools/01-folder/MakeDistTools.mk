@@ -27,12 +27,19 @@ else
 	@echo "pathCheckRootDistPlatformWin386 cleanRootDistPlatformWin386"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_386                  ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_386}"
 	@echo ""
-	@echo "pathCheckRootDistPlatformWinArm64 cleanRootDistPlatformArm64"
+	@echo "pathCheckRootDistPlatformWinArm64 cleanRootDistPlatformWinArm64"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM64                ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM64}"
 	@echo ""
-	@echo "pathCheckRootDistPlatformWinArm cleanRootDistPlatformArm"
+	@echo "pathCheckRootDistPlatformWinArm cleanRootDistPlatformWinArm"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM                  ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM}"
 	@echo "-----------------"
+	@echo "ENV_INFO_PLATFORM_OS_MACOS                             ${ENV_INFO_PLATFORM_OS_MACOS}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformMacOsAmd64 cleanRootDistPlatformMacOsAmd64"
+	@echo "ENV_INFO_PLATFORM_OS_MACOS_AMD64                       ${ENV_INFO_PLATFORM_OS_MACOS_AMD64}"
+	@echo ""
+	@echo "pathCheckRootDistPlatformMacOsArm64 cleanRootDistPlatformMacOsArm64"
+	@echo "ENV_INFO_PLATFORM_OS_MACOS_ARM64                       ${ENV_INFO_PLATFORM_OS_MACOS_ARM64}"
 	@echo ""
 	@echo "-----------------"
 	@echo "ENV_INFO_PLATFORM_OS_LINUX                             ${ENV_INFO_PLATFORM_OS_LINUX}"
@@ -116,7 +123,7 @@ else
 	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS}
 endif
 
-cleanRootRootDistPlatformWin:
+cleanRootDistPlatformWin:
 ifeq ($(OS),Windows_NT)
 	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_WINDOWS})
 else
@@ -176,7 +183,7 @@ else
 	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM64}
 endif
 
-cleanRootRootDistPlatformWinArm64:
+cleanRootDistPlatformWinArm64:
 ifeq ($(OS),Windows_NT)
 	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM64})
 else
@@ -196,7 +203,7 @@ else
 	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM}
 endif
 
-cleanRootRootDistPlatformWinArm:
+cleanRootDistPlatformWinArm:
 ifeq ($(OS),Windows_NT)
 	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_WINDOWS_ARM})
 else
@@ -204,6 +211,69 @@ else
 endif
 
 pathCheckRootDistPlatformWinAll: pathCheckRootDistPlatformWinAmd64 pathCheckRootDistPlatformWin386 pathCheckRootDistPlatformWinArm64 pathCheckRootDistPlatformWinArm
+
+ENV_INFO_PLATFORM_OS_MACOS=darwin
+ENV_PATH_DIST_PLATFORM_OS_MACOS=${ENV_PATH_INFO_ROOT_DIST_OS}/${ENV_INFO_PLATFORM_OS_MACOS}
+
+pathCheckRootDistPlatformMacOs: | $(ENV_PATH_DIST_PLATFORM_OS_MACOS)
+	@echo "-> dist folder tools path exist at: ${ENV_PATH_DIST_PLATFORM_OS_MACOS}"
+
+$(ENV_PATH_DIST_PLATFORM_OS_MACOS):
+	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_MACOS}"
+ifeq ($(OS),Windows_NT)
+	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_MACOS})
+else
+	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_MACOS}
+endif
+
+cleanRootDistPlatformMacOs:
+ifeq ($(OS),Windows_NT)
+	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_MACOS})
+else
+	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_MACOS}
+endif
+
+ENV_INFO_PLATFORM_OS_MACOS_AMD64=${ENV_PATH_DIST_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64}
+
+pathCheckRootDistPlatformMacOsAmd64: | $(ENV_INFO_PLATFORM_OS_MACOS_AMD64)
+	@echo "-> dist folder tools path exist at: ${ENV_INFO_PLATFORM_OS_MACOS_AMD64}"
+
+$(ENV_INFO_PLATFORM_OS_MACOS_AMD64):
+	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_INFO_PLATFORM_OS_MACOS_AMD64}"
+ifeq ($(OS),Windows_NT)
+	-@mkdir $(subst /,\,${ENV_INFO_PLATFORM_OS_MACOS_AMD64})
+else
+	-@mkdir -p ${ENV_INFO_PLATFORM_OS_MACOS_AMD64}
+endif
+
+cleanRootDistPlatformMacOsAmd64:
+ifeq ($(OS),Windows_NT)
+	-@RM -r $(subst /,\,${ENV_INFO_PLATFORM_OS_MACOS_AMD64})
+else
+	-@RM -r ${ENV_INFO_PLATFORM_OS_MACOS_AMD64}
+endif
+
+ENV_INFO_PLATFORM_OS_MACOS_ARM64=${ENV_PATH_DIST_PLATFORM_OS_MACOS}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64}
+
+pathCheckRootDistPlatformMacOsArm64: | $(ENV_INFO_PLATFORM_OS_MACOS_ARM64)
+	@echo "-> dist folder tools path exist at: ${ENV_INFO_PLATFORM_OS_MACOS_ARM64}"
+
+$(ENV_INFO_PLATFORM_OS_MACOS_ARM64):
+	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_INFO_PLATFORM_OS_MACOS_ARM64}"
+ifeq ($(OS),Windows_NT)
+	-@mkdir $(subst /,\,${ENV_INFO_PLATFORM_OS_MACOS_ARM64})
+else
+	-@mkdir -p ${ENV_INFO_PLATFORM_OS_MACOS_ARM64}
+endif
+
+cleanRootDistPlatformMacOsArm64:
+ifeq ($(OS),Windows_NT)
+	-@RM -r $(subst /,\,${ENV_INFO_PLATFORM_OS_MACOS_ARM64})
+else
+	-@RM -r ${ENV_INFO_PLATFORM_OS_MACOS_ARM64}
+endif
+
+pathCheckRootDistPlatformMacOsAll: pathCheckRootDistPlatformMacOsArm64 pathCheckRootDistPlatformMacOsAmd64
 
 ENV_INFO_PLATFORM_OS_LINUX=linux
 
