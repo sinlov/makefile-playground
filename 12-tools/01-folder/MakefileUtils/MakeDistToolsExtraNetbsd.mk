@@ -26,6 +26,7 @@ ifeq ($(OS),Windows_NT)
 	@echo "pathCheckRootDistPlatformNetbsdArm cleanRootDistPlatformNetbsdArm"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM                  $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM})"
 	@echo ""
+	@echo "pathCheckRootDistPlatformNetbsdAll to check all"
 	@echo "-----------------"
 	@echo ""
 else
@@ -47,6 +48,7 @@ else
 	@echo "pathCheckRootDistPlatformNetbsdArm cleanRootDistPlatformNetbsdArm"
 	@echo "ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM                  ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM}"
 	@echo ""
+	@echo "pathCheckRootDistPlatformNetbsdAll  to check all"
 	@echo "-----------------"
 	@echo ""
 endif
