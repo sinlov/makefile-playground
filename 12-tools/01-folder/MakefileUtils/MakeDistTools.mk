@@ -10,7 +10,7 @@ ENV_INFO_PLATFORM_OS_ARCH_386=386
 ENV_INFO_PLATFORM_OS_ARCH_ARM64=arm64
 ENV_INFO_PLATFORM_OS_ARCH_ARM=arm
 
-pathDistEnv: pathDistExtraEnv
+pathDistEnv:
 	@echo "-----------------  this pathDistEnv has start -----------------"
 	@echo "ENV_PATH_INFO_ROOT_DIST                                ${ENV_PATH_INFO_ROOT_DIST}"
 ifeq ($(OS),Windows_NT)
