@@ -137,7 +137,11 @@ endif
 	@echo "-----------------  this pathDistEnv has end -----------------"
 
 cleanDistAll:
+ifeq ($(OS),Windows_NT)
+	-@RM -r $(subst /,\,${ENV_PATH_INFO_ROOT_DIST})
+else
 	-@RM -r ${ENV_PATH_INFO_ROOT_DIST}
+endif
 
 pathCheckRootDist: | $(ENV_PATH_INFO_ROOT_DIST)
 	@echo "-> dist folder tools path exist at: ${ENV_PATH_INFO_ROOT_DIST}"
@@ -151,7 +155,11 @@ else
 endif
 
 cleanRootDistLocal:
+ifeq ($(OS),Windows_NT)
+	-@RM -r $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL})
+else
 	-@RM -r ${ENV_PATH_INFO_ROOT_DIST_LOCAL}
+endif
 
 pathCheckRootDistLocal: | $(ENV_PATH_INFO_ROOT_DIST_LOCAL)
 	@echo "-> dist folder tools path exist at: ${ENV_PATH_INFO_ROOT_DIST_LOCAL}"
@@ -165,7 +173,11 @@ else
 endif
 
 cleanRootDistOs:
+ifeq ($(OS),Windows_NT)
+	-@RM -r $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS})
+else
 	-@RM -r ${ENV_PATH_INFO_ROOT_DIST_OS}
+endif
 
 pathCheckRootDistOs: | $(ENV_PATH_INFO_ROOT_DIST_OS)
 	@echo "-> dist folder tools path exist at: ${ENV_PATH_INFO_ROOT_DIST_OS}"
