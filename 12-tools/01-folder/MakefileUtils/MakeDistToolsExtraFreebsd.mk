@@ -6,8 +6,8 @@
 
 pathDistExtraFreebsdEnv:
 	@echo "-----------------  this pathDistExtraFreebsdEnv has start -----------------"
-	@echo "ENV_PATH_INFO_ROOT_DIST                                ${ENV_PATH_INFO_ROOT_DIST}"
 ifeq ($(OS),Windows_NT)
+	@echo "ENV_PATH_INFO_ROOT_DIST                                $(subst /,\,${ENV_PATH_INFO_ROOT_DIST})"
 	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                          $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL})"
 	@echo "ENV_PATH_INFO_ROOT_DIST_OS                             $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS})"
 	@echo ""
@@ -30,6 +30,7 @@ ifeq ($(OS),Windows_NT)
 	@echo "-----------------"
 	@echo ""
 else
+	@echo "ENV_PATH_INFO_ROOT_DIST                                ${ENV_PATH_INFO_ROOT_DIST}"
 	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                          ${ENV_PATH_INFO_ROOT_DIST_LOCAL}"
 	@echo "ENV_PATH_INFO_ROOT_DIST_OS                             ${ENV_PATH_INFO_ROOT_DIST_OS}"
 	@echo ""

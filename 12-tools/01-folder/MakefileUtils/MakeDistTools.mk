@@ -11,7 +11,7 @@ ENV_INFO_PLATFORM_OS_ARCH_ARM64=arm64
 ENV_INFO_PLATFORM_OS_ARCH_ARM=arm
 ENV_INFO_PLATFORM_OS_ARCH_MIPS=mips
 ENV_INFO_PLATFORM_OS_ARCH_MIPS64=mips64
-ENV_INFO_PLATFORM_OS_ARCH_MIPS66LE=mips64le
+ENV_INFO_PLATFORM_OS_ARCH_MIPS64LE=mips64le
 ENV_INFO_PLATFORM_OS_ARCH_RISCV64=riscv64
 ENV_INFO_PLATFORM_OS_ARCH_S390X=s390x
 ENV_INFO_PLATFORM_OS_ARCH_PPC64=ppc64
@@ -20,8 +20,8 @@ ENV_INFO_PLATFORM_OS_ARCH_LOONG64=loong64
 
 pathDistEnv:
 	@echo "-----------------  this pathDistEnv has start -----------------"
-	@echo "ENV_PATH_INFO_ROOT_DIST                                ${ENV_PATH_INFO_ROOT_DIST}"
 ifeq ($(OS),Windows_NT)
+	@echo "ENV_PATH_INFO_ROOT_DIST                                $(subst /,\,${ENV_PATH_INFO_ROOT_DIST})"
 	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                          $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL})"
 	@echo "ENV_PATH_INFO_ROOT_DIST_OS                             $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS})"
 	@echo ""
@@ -74,6 +74,7 @@ ifeq ($(OS),Windows_NT)
 	@echo "-----------------"
 	@echo ""
 else
+	@echo "ENV_PATH_INFO_ROOT_DIST                                ${ENV_PATH_INFO_ROOT_DIST}"
 	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                          ${ENV_PATH_INFO_ROOT_DIST_LOCAL}"
 	@echo "ENV_PATH_INFO_ROOT_DIST_OS                             ${ENV_PATH_INFO_ROOT_DIST_OS}"
 	@echo ""

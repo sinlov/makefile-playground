@@ -6,10 +6,10 @@
 
 pathDistExtraNetbsdEnv:
 	@echo "-----------------  this pathDistExtraNetbsdEnv has start -----------------"
-	@echo "ENV_PATH_INFO_ROOT_DIST                                ${ENV_PATH_INFO_ROOT_DIST}"
 ifeq ($(OS),Windows_NT)
-	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                          $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL})"
-	@echo "ENV_PATH_INFO_ROOT_DIST_OS                             $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS})"
+	@echo "ENV_PATH_INFO_ROOT_DIST                               $(subst /,\,${ENV_PATH_INFO_ROOT_DIST})"
+	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                         $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL})"
+	@echo "ENV_PATH_INFO_ROOT_DIST_OS                            $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_OS})"
 	@echo ""
 	@echo "-----------------"
 	@echo "ENV_INFO_PLATFORM_OS_NETBSD                           $(subst /,\,${ENV_INFO_PLATFORM_OS_NETBSD})"
@@ -30,8 +30,9 @@ ifeq ($(OS),Windows_NT)
 	@echo "-----------------"
 	@echo ""
 else
-	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                          ${ENV_PATH_INFO_ROOT_DIST_LOCAL}"
-	@echo "ENV_PATH_INFO_ROOT_DIST_OS                             ${ENV_PATH_INFO_ROOT_DIST_OS}"
+	@echo "ENV_PATH_INFO_ROOT_DIST                               ${ENV_PATH_INFO_ROOT_DIST}"
+	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                         ${ENV_PATH_INFO_ROOT_DIST_LOCAL}"
+	@echo "ENV_PATH_INFO_ROOT_DIST_OS                            ${ENV_PATH_INFO_ROOT_DIST_OS}"
 	@echo ""
 	@echo "-----------------"
 	@echo "ENV_INFO_PLATFORM_OS_NETBSD                           ${ENV_INFO_PLATFORM_OS_NETBSD}"
