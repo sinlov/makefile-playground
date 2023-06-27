@@ -65,16 +65,16 @@ pathCheckRootDistPlatformOpenbsd: | $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD)
 $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD})
+	@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD})
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD}
 endif
 
 cleanRootDistPlatformOpenbsd:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD})
+	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD})
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD}
 endif
 
 ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64=${ENV_PATH_DIST_PLATFORM_OS_OPENBSD}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64}
@@ -85,16 +85,16 @@ pathCheckRootDistPlatformOpenbsdAmd64: | $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD
 $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64})
+	@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64})
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64}
 endif
 
 cleanRootDistPlatformOpenbsdAmd64:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64})
+	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64})
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64}
 endif
 
 ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386=${ENV_PATH_DIST_PLATFORM_OS_OPENBSD}/${ENV_INFO_PLATFORM_OS_ARCH_386}
@@ -105,16 +105,16 @@ pathCheckRootDistPlatformOpenbsd386: | $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386)
 $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386})
+	@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386})
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386}
 endif
 
 cleanRootDistPlatformOpenbsd386:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386})
+	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386})
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_386}
 endif
 
 ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM64=${ENV_PATH_DIST_PLATFORM_OS_OPENBSD}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64}
@@ -125,16 +125,16 @@ pathCheckRootDistPlatformOpenbsdArm64: | $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM
 $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM64):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM64}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM64})
+	@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM64})
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM64}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM64}
 endif
 
 cleanRootDistPlatformOpenbsdArm64:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM64})
+	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM64})
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM64}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM64}
 endif
 
 ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM=${ENV_PATH_DIST_PLATFORM_OS_OPENBSD}/${ENV_INFO_PLATFORM_OS_ARCH_ARM}
@@ -145,16 +145,16 @@ pathCheckRootDistPlatformOpenbsdArm: | $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM)
 $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM})
+	@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM})
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM}
 endif
 
 cleanRootDistPlatformOpenbsdArm:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM})
+	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM})
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_ARM}
 endif
 
 pathCheckRootDistPlatformOpenbsdAll: pathCheckRootDistPlatformOpenbsdAmd64 pathCheckRootDistPlatformOpenbsd386 pathCheckRootDistPlatformOpenbsdArm64 pathCheckRootDistPlatformOpenbsdArm

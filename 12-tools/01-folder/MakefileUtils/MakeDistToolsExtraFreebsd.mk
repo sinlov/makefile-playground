@@ -65,16 +65,16 @@ pathCheckRootDistPlatformFreebsd: | $(ENV_PATH_DIST_PLATFORM_OS_FREEBSD)
 $(ENV_PATH_DIST_PLATFORM_OS_FREEBSD):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_FREEBSD})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD}
 endif
 
 cleanRootDistPlatformFreebsd:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_FREEBSD})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD}
 endif
 
 ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD64=${ENV_PATH_DIST_PLATFORM_OS_FREEBSD}/${ENV_INFO_PLATFORM_OS_ARCH_AMD64}
@@ -85,16 +85,16 @@ pathCheckRootDistPlatformFreebsdAmd64: | $(ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD
 $(ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD64):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD64}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD64})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD64}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD64}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD64}
 endif
 
 cleanRootDistPlatformFreebsdAmd64:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD64})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD64}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD64}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_AMD64}
 endif
 
 ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386=${ENV_PATH_DIST_PLATFORM_OS_FREEBSD}/${ENV_INFO_PLATFORM_OS_ARCH_386}
@@ -105,16 +105,16 @@ pathCheckRootDistPlatformFreebsd386: | $(ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386)
 $(ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386}
 endif
 
 cleanRootDistPlatformFreebsd386:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_386}
 endif
 
 ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM64=${ENV_PATH_DIST_PLATFORM_OS_FREEBSD}/${ENV_INFO_PLATFORM_OS_ARCH_ARM64}
@@ -125,16 +125,16 @@ pathCheckRootDistPlatformFreebsdArm64: | $(ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM
 $(ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM64):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM64}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM64})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM64}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM64}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM64}
 endif
 
 cleanRootDistPlatformFreebsdArm64:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM64})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM64}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM64}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM64}
 endif
 
 ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM=${ENV_PATH_DIST_PLATFORM_OS_FREEBSD}/${ENV_INFO_PLATFORM_OS_ARCH_ARM}
@@ -145,16 +145,16 @@ pathCheckRootDistPlatformFreebsdArm: | $(ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM)
 $(ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM}
 endif
 
 cleanRootDistPlatformFreebsdArm:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_FREEBSD_ARM}
 endif
 
 pathCheckRootDistPlatformFreebsdAll: pathCheckRootDistPlatformFreebsdAmd64 pathCheckRootDistPlatformFreebsd386 pathCheckRootDistPlatformFreebsdArm64 pathCheckRootDistPlatformFreebsdArm

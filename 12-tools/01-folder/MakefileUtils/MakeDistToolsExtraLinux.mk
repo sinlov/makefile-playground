@@ -4,8 +4,8 @@
 # include MakefileUtils/MakeDistTools.mk
 # include MakefileUtils/MakeDistToolsExtraLinux.mk
 
-makeDistToolsExtraLinux:
-	@echo "-----------------  this makeDistToolsExtraLinux has start -----------------"
+pathDistToolsExtraLinux:
+	@echo "-----------------  this pathDistToolsExtraLinux has start -----------------"
 ifeq ($(OS),Windows_NT)
 	@echo "ENV_PATH_INFO_ROOT_DIST                              $(subst /,\,${ENV_PATH_INFO_ROOT_DIST})"
 	@echo "ENV_PATH_INFO_ROOT_DIST_LOCAL                        $(subst /,\,${ENV_PATH_INFO_ROOT_DIST_LOCAL})"
@@ -101,16 +101,16 @@ pathCheckRootDistPlatformLinuxMips: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS)
 $(ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS}
 endif
 
 cleanRootDistPlatformLinuxMips:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS}
 endif
 
 ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64=${ENV_PATH_DIST_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_MIPS64}
@@ -121,16 +121,16 @@ pathCheckRootDistPlatformLinuxMips64: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64
 $(ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64}
 endif
 
 cleanRootDistPlatformLinuxMips64:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64}
 endif
 
 
@@ -142,42 +142,22 @@ pathCheckRootDistPlatformLinuxMips64le: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS
 $(ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64LE):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64LE}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64LE})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64LE}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64LE}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64LE}
 endif
 
 cleanRootDistPlatformLinuxMips64le:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64LE})
+	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64LE})
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64LE}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_MIPS64LE}
 endif
 
 pathCheckRootDistPlatformLinuxMipsAll: pathCheckRootDistPlatformLinuxMips pathCheckRootDistPlatformLinuxMips64 pathCheckRootDistPlatformLinuxMips64le
 
 cleanRootDistPlatformLinuxMipsAll: cleanRootDistPlatformLinuxMips cleanRootDistPlatformLinuxMips64 cleanRootDistPlatformLinuxMips64le
 
-ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64=${ENV_PATH_DIST_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_RISCV64}
-
-pathCheckRootDistPlatformLinuxRiscv64: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64)
-	@echo "-> dist folder tools path exist at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64}"
-
-$(ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64):
-	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64}"
-ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64})
-else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64}
-endif
-
-cleanRootDistPlatformLinuxRiscv64:
-ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64})
-else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64}
-endif
-
 
 ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64=${ENV_PATH_DIST_PLATFORM_OS_LINUX}/${ENV_INFO_PLATFORM_OS_ARCH_RISCV64}
 
@@ -187,16 +167,16 @@ pathCheckRootDistPlatformLinuxRiscv64: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV
 $(ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64}
 endif
 
 cleanRootDistPlatformLinuxRiscv64:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_RISCV64}
 endif
 
 
@@ -208,16 +188,16 @@ pathCheckRootDistPlatformLinuxS390x: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_S390X)
 $(ENV_PATH_DIST_PLATFORM_OS_LINUX_S390X):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_S390X}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_S390X})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_S390X}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_S390X}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_S390X}
 endif
 
 cleanRootDistPlatformLinuxS390x:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_S390X})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_S390X}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_S390X}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_S390X}
 endif
 
 
@@ -229,16 +209,16 @@ pathCheckRootDistPlatformLinuxPpc64: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64)
 $(ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64}
 endif
 
 cleanRootDistPlatformLinuxPpc64:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64}
 endif
 
 
@@ -250,16 +230,16 @@ pathCheckRootDistPlatformLinuxPpc64le: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64
 $(ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64LE):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64LE}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64LE})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64LE}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64LE}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64LE}
 endif
 
 cleanRootDistPlatformLinuxPpc64le:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64LE})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64LE}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64LE}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_PPC64LE}
 endif
 
 
@@ -271,14 +251,16 @@ pathCheckRootDistPlatformLinuxLoong64: | $(ENV_PATH_DIST_PLATFORM_OS_LINUX_LOONG
 $(ENV_PATH_DIST_PLATFORM_OS_LINUX_LOONG64):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_LINUX_LOONG64}"
 ifeq ($(OS),Windows_NT)
-	-@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_LOONG64})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_LOONG64}
 else
-	-@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_LOONG64}
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_LINUX_LOONG64}
 endif
 
 cleanRootDistPlatformLinuxLoong64:
 ifeq ($(OS),Windows_NT)
-	-@RM -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_LINUX_LOONG64})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_LOONG64}
 else
-	-@RM -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_LOONG64}
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_LINUX_LOONG64}
 endif
+
+pathCheckRootDistPlatformLinuxNew: pathCheckRootDistPlatformLinuxRiscv64 pathCheckRootDistPlatformLinuxS390x pathCheckRootDistPlatformLinuxPpc64 pathCheckRootDistPlatformLinuxPpc64le pathCheckRootDistPlatformLinuxLoong64
