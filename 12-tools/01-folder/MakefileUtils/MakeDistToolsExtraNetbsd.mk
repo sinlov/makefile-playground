@@ -65,14 +65,14 @@ pathCheckRootDistPlatformNetbsd: | $(ENV_PATH_DIST_PLATFORM_OS_NETBSD)
 $(ENV_PATH_DIST_PLATFORM_OS_NETBSD):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_NETBSD}"
 ifeq ($(OS),Windows_NT)
-	@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_NETBSD})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_NETBSD}
 else
 	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_NETBSD}
 endif
 
 cleanRootDistPlatformNetbsd:
 ifeq ($(OS),Windows_NT)
-	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_NETBSD})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_NETBSD}
 else
 	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_NETBSD}
 endif
@@ -85,14 +85,14 @@ pathCheckRootDistPlatformNetbsdAmd64: | $(ENV_PATH_DIST_PLATFORM_OS_NETBSD_AMD64
 $(ENV_PATH_DIST_PLATFORM_OS_NETBSD_AMD64):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_AMD64}"
 ifeq ($(OS),Windows_NT)
-	@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_NETBSD_AMD64})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_AMD64}
 else
 	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_AMD64}
 endif
 
 cleanRootDistPlatformNetbsdAmd64:
 ifeq ($(OS),Windows_NT)
-	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_NETBSD_AMD64})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_AMD64}
 else
 	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_AMD64}
 endif
@@ -105,14 +105,14 @@ pathCheckRootDistPlatformNetbsd386: | $(ENV_PATH_DIST_PLATFORM_OS_NETBSD_386)
 $(ENV_PATH_DIST_PLATFORM_OS_NETBSD_386):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_386}"
 ifeq ($(OS),Windows_NT)
-	@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_NETBSD_386})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_386}
 else
 	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_386}
 endif
 
 cleanRootDistPlatformNetbsd386:
 ifeq ($(OS),Windows_NT)
-	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_NETBSD_386})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_386}
 else
 	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_386}
 endif
@@ -125,14 +125,14 @@ pathCheckRootDistPlatformNetbsdArm64: | $(ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM64
 $(ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM64):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM64}"
 ifeq ($(OS),Windows_NT)
-	@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM64})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM64}
 else
 	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM64}
 endif
 
 cleanRootDistPlatformNetbsdArm64:
 ifeq ($(OS),Windows_NT)
-	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM64})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM64}
 else
 	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM64}
 endif
@@ -145,14 +145,14 @@ pathCheckRootDistPlatformNetbsdArm: | $(ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM)
 $(ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM}"
 ifeq ($(OS),Windows_NT)
-	@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM}
 else
 	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM}
 endif
 
 cleanRootDistPlatformNetbsdArm:
 ifeq ($(OS),Windows_NT)
-	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM}
 else
 	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_NETBSD_ARM}
 endif
