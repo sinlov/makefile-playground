@@ -85,14 +85,14 @@ pathCheckRootDistPlatformOpenbsdAmd64: | $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD
 $(ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64):
 	@echo "-> dist folder tools does not exist, try mkdir at: ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64}"
 ifeq ($(OS),Windows_NT)
-	@mkdir $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64})
+	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64}
 else
 	@mkdir -p ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64}
 endif
 
 cleanRootDistPlatformOpenbsdAmd64:
 ifeq ($(OS),Windows_NT)
-	@$(RM) -r $(subst /,\,${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64})
+	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64}
 else
 	@$(RM) -r ${ENV_PATH_DIST_PLATFORM_OS_OPENBSD_AMD64}
 endif
